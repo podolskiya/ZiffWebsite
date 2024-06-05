@@ -2,7 +2,8 @@ const express = require("express");
 const app = express();
 
 const bodyParser = require("body-parser");
-const util = require("util")
+const util = require("util");
+const path = require("path");
 
 const nodemailer = require("nodemailer");
 
@@ -21,6 +22,13 @@ let transporter = nodemailer.createTransport({
 });
 
 app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(express.static(path.join(__dirname, '/elements')));
+app.use(express.static(path.join(__dirname, '/styles')));
+app.use(express.static(path.join(__dirname, '/scripts')));
+app.use(express.static(path.join(__dirname, '/images')));
+app.use(express.static(path.join(__dirname, '/videos')));
+app.use(express.static(path.join(__dirname, '/fonts/Montserrat')));
 
 app.get("/", function (request, response) {
     response.sendFile(__dirname + "/index.html");
@@ -52,9 +60,11 @@ app.post("/get-involved", function (request, response) {
                 util.format("Message: <i>%s</i><br>From: <i>%s</i><br>Feedback: <i>%s</i><br><br>This <i>message</i> was sent from <strong>ZIFF</strong> server.", message, name, email),
         
         });
+
+
         
         console.log(result);
-        
+        response.redirect("/get-involved");
     };
 
     console.log(request.body);

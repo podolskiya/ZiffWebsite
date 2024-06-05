@@ -152,7 +152,7 @@ header:before {
 .header__list-item:last-child {
     padding: var(--button-padding);
     background-color: var(--color-black);
-    aspect-ratio: 1 / 0.3;
+/*     aspect-ratio: 1 / 0.3; */
     border-radius: var(--border-radius);
     align-content: center;
 }
@@ -391,7 +391,7 @@ body {
 .two-parts-section img {
     width: 55%;
     border-radius: var(--border-radius-small);
-    height: fit-content;
+/*     height: fit-content; */
 }
 
 .mission {
@@ -409,7 +409,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    justify-content: space-between;
+/*     justify-content: space-between; */
 }
 
 .mission__wrapper p {
@@ -530,7 +530,7 @@ footer::after {
     height: 0.5px;
     top: 15px;
     position: absolute;
-    box-shadow: 0px 2px 15px var(--color-gray);
+/*     box-shadow: 0px 2px 15px var(--color-gray); */
 }
 
 .footer__socials {
@@ -552,7 +552,7 @@ footer::after {
 
 .footer__logo {
     display: flex;
-    width: 20vw;
+/*     width: 20vw; */
     max-width: 350px;
     min-width: 150px;
     flex-shrink: 0;
